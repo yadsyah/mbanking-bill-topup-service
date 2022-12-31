@@ -6,9 +6,9 @@ WORKDIR /build-apps
 
 COPY . /build-apps/
 
-RUN mvn verify -Dmaven.test.skip
+RUN mvn verify -Dmaven.test.skip -q
 
-RUN mvn clean install -Dmaven.test.skip
+RUN mvn clean install -Dmaven.test.skip -q
 
 FROM openjdk:17-alpine as RUN-APPS
 USER root
